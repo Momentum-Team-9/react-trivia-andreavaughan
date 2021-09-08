@@ -1,6 +1,6 @@
 import React from 'react'
-import { Settings } from './settings'
-import { Questions } from './questions'
+import { Settings } from './Settings'
+import { Questions } from './Questions'
 
 
 export const Game = () => {
