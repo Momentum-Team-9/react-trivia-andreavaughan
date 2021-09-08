@@ -1,5 +1,6 @@
 import React from 'react'
-import { Settings } from './settings';
+import { Game } from './game'
+
 
 export const App = () => {
     
@@ -7,7 +8,7 @@ export const App = () => {
         <div>
             <h1>Trivia</h1>
             <div>
-                <Settings />
+                <Game />
             </div>
         </div>
     )
