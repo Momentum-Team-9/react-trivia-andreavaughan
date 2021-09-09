@@ -1,6 +1,7 @@
 import React from 'react'
 
-export const Questions = () => {
+export const Questions = ({ questions }) => {
+    console.log(questions)
 
     return (
         <div>

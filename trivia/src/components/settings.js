@@ -2,9 +2,8 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Categories } from './Categories'
 
-export const Settings = () => {
+export const Settings = ({ questions, setQuestions }) => {
     const [ selectedCategory, setSelectedCategory ] = useState(null)
-    const [ questions, setQuestions ] = useState([])
 
     useEffect(() => {
         if (selectedCategory !== null && questions.length === 0) {
@@ -18,8 +17,6 @@ export const Settings = () => {
             })
         }
     })
-
-    console.log(questions)
 
     return (
         <>

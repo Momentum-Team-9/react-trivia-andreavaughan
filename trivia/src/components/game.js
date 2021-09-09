@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Settings } from './Settings'
 import { Questions } from './Questions'
 
 
 export const Game = () => {
+    const [ questions, setQuestions ] = useState([])
 
     return (
         <div>
-            <Settings />
-            <Questions />
+            <Settings questions={questions} setQuestions={setQuestions} />
+            <Questions questions={questions} />
         </div>
     )
 }
