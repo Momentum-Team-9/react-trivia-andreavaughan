@@ -1,7 +1,10 @@
 import React from 'react'
+import { Answers } from './Answers'
 
 export const Questions = ({ questions }) => {
     console.log(questions)
+
+    
 
     return (
         <>
