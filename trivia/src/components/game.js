@@ -8,8 +8,9 @@ export const Game = () => {
 
     return (
         <div>
-            <Settings questions={questions} setQuestions={setQuestions} />
-            <Questions questions={questions} />
+            { questions.length === 0 ? 
+            <Settings questions={questions} setQuestions={setQuestions} /> :
+            <Questions questions={questions} /> }
         </div>
     )
 }
