@@ -4,20 +4,22 @@ import { Categories } from './Categories'
 
 export const Settings = () => {
     const [ selectedCategory, setSelectedCategory ] = useState(null)
-
-    console.log(selectedCategory)    
+    const [ questions, setQuestions ] = useState([])
 
     useEffect(() => {
-        if (selectedCategory != null) {
+        if (selectedCategory !== null && questions.length === 0) {
             console.log('it runs!')
+            console.log(selectedCategory)
             axios.get(
                 `https://opentdb.com/api.php?amount=10&category=${selectedCategory}`
             )
             .then((response) => {
-                console.log(response)
+                setQuestions(response.data.results)
             })
         }
     })
+
+    console.log(questions)
 
     return (
         <>
