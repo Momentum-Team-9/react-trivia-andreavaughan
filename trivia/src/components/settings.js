@@ -13,7 +13,16 @@ export const Settings = ({ questions, setQuestions }) => {
                 `https://opentdb.com/api.php?amount=10&category=${selectedCategory}&difficulty=easy&type=multiple`
             )
             .then((response) => {
-                setQuestions(response.data.results)
+                setQuestions(response.data.results.map((question, index) => {
+                    const answer = (question.correct_answer)
+                    const options = [...question.incorrect_answers, answer]
+                    return {
+                        id: `${index}`, 
+                        question: question.question,
+                        answer: answer,
+                        options: options
+                    }
+                }))
             })
         }
     })
