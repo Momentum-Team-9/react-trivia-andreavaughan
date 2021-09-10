@@ -20,7 +20,7 @@ export const Settings = ({ questions, setQuestions }) => {
                         id: `${index}`, 
                         question: question.question,
                         answer: answer,
-                        options: options
+                        options: options.sort(() => Math.random() - 0.5)
                     }
                 }))
             })
