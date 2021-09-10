@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Settings } from './Settings'
-import { Questions } from './Questions'
+import { QuestionsList } from './QuestionsList'
 
 
 export const Game = () => {
@@ -10,7 +10,7 @@ export const Game = () => {
         <div>
             { questions.length === 0 ? 
             <Settings questions={questions} setQuestions={setQuestions} /> :
-            <Questions questions={questions} /> }
+            <QuestionsList questions={questions} /> }
         </div>
     )
 }
