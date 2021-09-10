@@ -10,7 +10,7 @@ export const Settings = ({ questions, setQuestions }) => {
             console.log('it runs!')
             console.log(selectedCategory)
             axios.get(
-                `https://opentdb.com/api.php?amount=10&category=${selectedCategory}`
+                `https://opentdb.com/api.php?amount=10&category=${selectedCategory}&difficulty=easy&type=multiple`
             )
             .then((response) => {
                 setQuestions(response.data.results)
