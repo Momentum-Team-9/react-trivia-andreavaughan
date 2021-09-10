@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import he from 'he'
 import { Categories } from './Categories'
 
 export const Settings = ({ questions, setQuestions }) => {
@@ -13,12 +14,13 @@ export const Settings = ({ questions, setQuestions }) => {
                 `https://opentdb.com/api.php?amount=10&category=${selectedCategory}&difficulty=easy&type=multiple`
             )
             .then((response) => {
+                console.log(response.data)
                 setQuestions(response.data.results.map((question, index) => {
-                    const answer = (question.correct_answer)
-                    const options = [...question.incorrect_answers, answer]
+                    const answer = he.decode(question.correct_answer)
+                    const options = [...question.incorrect_answers.map( item => he.decode(item)), answer]
                     return {
                         id: `${index}`, 
-                        question: question.question,
+                        question: he.decode(question.question),
                         answer: answer,
                         options: options.sort(() => Math.random() - 0.5)
                     }
@@ -26,6 +28,8 @@ export const Settings = ({ questions, setQuestions }) => {
             })
         }
     })
+
+    console.log(questions)
 
     return (
         <>
