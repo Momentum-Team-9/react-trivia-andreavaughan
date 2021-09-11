@@ -15,6 +15,8 @@ export const Question = ({ question }) => {
 
     console.log(isCorrect)
 
+    console.log(question.options)
+
     return (
         <div>
             <div className="card" key={question.id}>
@@ -22,10 +24,15 @@ export const Question = ({ question }) => {
                         <h4 className="card-title">{question.question}</h4>
                         { checkedAnswer === '' ? 
                             <div className="d-grid gap-2">
-                                <button onClick={() => (setCheckedAnswer(question.options[0], question.id))} className="btn btn-primary" type="button">{question.options[0]}</button>
-                                <button onClick={() => (setCheckedAnswer(question.options[1], question.id))} className="btn btn-primary" type="button">{question.options[1]}</button>
-                                <button onClick={() => (setCheckedAnswer(question.options[2], question.id))} className="btn btn-primary" type="button">{question.options[2]}</button>
-                                <button onClick={() => (setCheckedAnswer(question.options[3], question.id))} className="btn btn-primary" type="button">{question.options[3]}</button>
+                                {question.options.map((option, i) => (
+                                    <button
+                                    onClick={() => (setCheckedAnswer(option))}
+                                    key={i}
+                                    className="btn btn-primary"
+                                    type="button">
+                                        {option}
+                                    </button>
+                                ))}
                             </div> :
                             <div className="d-grid gap-2">
                                 <h3>The correct answer is: </h3>
