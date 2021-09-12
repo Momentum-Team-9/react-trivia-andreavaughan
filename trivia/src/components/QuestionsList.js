@@ -8,7 +8,7 @@ export const QuestionsList = ({ questions }) => {
     const [ currentIndex, setCurrentIndex ] = useState(0)
 
     useEffect(() => {
-
+        setIsCorrect(false)
     }, [currentIndex])
 
     

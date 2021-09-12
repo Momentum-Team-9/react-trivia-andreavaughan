@@ -7,7 +7,7 @@ export const Question = ({ question, isCorrect, setIsCorrect, currentIndex, setC
     useEffect(() => {
         if (checkedAnswer === question.answer) {
             console.log('your answer is correct')
-            setIsCorrect(!isCorrect)
+            setIsCorrect(true)
         }
 
     }, [checkedAnswer])
