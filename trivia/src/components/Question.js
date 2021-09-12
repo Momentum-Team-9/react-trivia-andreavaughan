@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 
-export const Question = ({ question, isCorrect, setIsCorrect, currentIndex, setCurrentIndex }) => {
+export const Question = ({ question, setIsCorrect, currentIndex, setCurrentIndex }) => {
     const [ checkedAnswer, setCheckedAnswer ] = useState('')
 
     useEffect(() => {
@@ -9,10 +9,7 @@ export const Question = ({ question, isCorrect, setIsCorrect, currentIndex, setC
             console.log('your answer is correct')
             setIsCorrect(true)
         }
-
     }, [checkedAnswer])
-
-    console.log(isCorrect)
 
     return (
         <div>

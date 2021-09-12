@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Question } from './Question'
 import { Score } from './Score'
+import { EndgameCard } from './EndgameCard'
 
 
 export const QuestionsList = ({ questions }) => {
@@ -11,20 +12,21 @@ export const QuestionsList = ({ questions }) => {
         setIsCorrect(false)
     }, [currentIndex])
 
-    
     console.log(questions[currentIndex])
 
     return (
         <>
             <Score isCorrect={isCorrect}/>
-            <Question 
-                question={questions[currentIndex]} 
-                key={questions[currentIndex].id} 
-                isCorrect={isCorrect}
-                setIsCorrect={setIsCorrect}
-                currentIndex={currentIndex}
-                setCurrentIndex={setCurrentIndex}
-            />
+            { questions[currentIndex] !== undefined ?
+                <Question 
+                    question={questions[currentIndex]} 
+                    key={questions[currentIndex].id} 
+                    setIsCorrect={setIsCorrect}
+                    currentIndex={currentIndex}
+                    setCurrentIndex={setCurrentIndex}
+                /> :
+                <EndgameCard />
+            }
         </>
     )
 }
