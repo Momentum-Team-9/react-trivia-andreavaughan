@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 
-export const Question = ({ question, isCorrect, setIsCorrect }) => {
+export const Question = ({ question, isCorrect, setIsCorrect, currentIndex, setCurrentIndex }) => {
     const [ checkedAnswer, setCheckedAnswer ] = useState('')
 
     useEffect(() => {
@@ -37,7 +37,7 @@ export const Question = ({ question, isCorrect, setIsCorrect }) => {
                                 <h3>You answered: </h3>
                                 <p>{checkedAnswer}</p>
                                 <button
-                                onClick={() => (console.log('click!'))}
+                                onClick={() => (setCurrentIndex(currentIndex + 1))}
                                 className="btn btn-danger">
                                     Next Question
                                 </button>

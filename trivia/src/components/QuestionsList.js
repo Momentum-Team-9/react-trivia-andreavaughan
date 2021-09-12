@@ -5,20 +5,26 @@ import { Score } from './Score'
 
 export const QuestionsList = ({ questions }) => {
     const [ isCorrect, setIsCorrect ] = useState(false)
+    const [ currentIndex, setCurrentIndex ] = useState(0)
 
+    useEffect(() => {
+
+    }, [currentIndex])
+
+    
+    console.log(questions[currentIndex])
 
     return (
         <>
             <Score isCorrect={isCorrect}/>
-            {questions.map((question) => (
-                <Question 
-                question={question} 
-                key={question.id} 
+            <Question 
+                question={questions[currentIndex]} 
+                key={questions[currentIndex].id} 
                 isCorrect={isCorrect}
                 setIsCorrect={setIsCorrect}
-                />
-                )
-            )}
+                currentIndex={currentIndex}
+                setCurrentIndex={setCurrentIndex}
+            />
         </>
     )
 }

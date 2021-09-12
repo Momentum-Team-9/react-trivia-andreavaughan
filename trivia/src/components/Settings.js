@@ -8,13 +8,10 @@ export const Settings = ({ questions, setQuestions }) => {
 
     useEffect(() => {
         if (selectedCategory !== null && questions.length === 0) {
-            console.log('it runs!')
-            console.log(selectedCategory)
             axios.get(
                 `https://opentdb.com/api.php?amount=10&category=${selectedCategory}`
             )
             .then((response) => {
-                console.log(response.data)
                 setQuestions(response.data.results.map((question, index) => {
                     const answer = he.decode(question.correct_answer)
                     const options = [...question.incorrect_answers.map( item => he.decode(item)), answer]
