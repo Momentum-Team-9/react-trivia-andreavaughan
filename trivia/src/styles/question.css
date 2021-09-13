@@ -1,7 +1,13 @@
+.card {
+  background-color: #b8e1ff;
+  color: #000000;
+  text-align: center;
+}
+
 .correct {
-  background-color: green;
+  color: #00a676;
 }
 
 .incorrect {
-  background-color: red;
+  color: #ff5e5b;
 }

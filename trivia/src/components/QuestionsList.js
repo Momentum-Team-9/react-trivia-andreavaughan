@@ -3,6 +3,7 @@ import { Question } from './Question'
 import { Score } from './Score'
 import { EndgameCard } from './EndgameCard'
 import { QuestionCounter } from './QuestionCounter'
+import '../styles/questions-list.css'
 
 
 export const QuestionsList = ({ questions, setQuestions }) => {
@@ -27,14 +28,16 @@ export const QuestionsList = ({ questions, setQuestions }) => {
                 /> :
                 <EndgameCard score={score} setQuestions={setQuestions}/>
             }
-            {questions[currentIndex] !== undefined ? 
-                <QuestionCounter questions={questions} currentIndex={currentIndex}/> :
-                <div></div> 
-            }
-            { questions[currentIndex] !== undefined ? 
-                <Score isCorrect={isCorrect} score={score} setScore={setScore}/> :
-                <div></div>
-            }
+            <div className="question-nums">
+                {questions[currentIndex] !== undefined ? 
+                    <QuestionCounter questions={questions} currentIndex={currentIndex}/> :
+                    <div></div> 
+                }
+                { questions[currentIndex] !== undefined ? 
+                    <Score isCorrect={isCorrect} score={score} setScore={setScore}/> :
+                    <div></div>
+                }
+            </div>
         </>
     )
 }

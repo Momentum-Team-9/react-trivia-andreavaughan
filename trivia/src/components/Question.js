@@ -30,13 +30,12 @@ export const Question = ({ question, isCorrect, setIsCorrect, currentIndex, setC
                                 ))}
                             </div> :
                             <div className={isCorrect ? 'correct' : 'incorrect'}>
-                                <h3>The correct answer is: </h3>
-                                <p>{question.answer}</p>
-                                <h3>You answered: </h3>
-                                <p>{checkedAnswer}</p>
+                                <h5>The correct answer is: </h5>
+                                <h3>{question.answer}</h3>
+                                <h5>You answered: {checkedAnswer}</h5>
                                 <button
                                 onClick={() => (setCurrentIndex(currentIndex + 1))}
-                                className="btn btn-danger">
+                                className={isCorrect ? 'btn btn-success' : 'btn btn-danger'}>
                                     Next Question
                                 </button>
                             </div>
