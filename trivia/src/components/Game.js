@@ -10,7 +10,7 @@ export const Game = () => {
         <div>
             { questions.length === 0 ? 
             <Settings questions={questions} setQuestions={setQuestions} /> :
-            <QuestionsList questions={questions} /> }
+            <QuestionsList questions={questions} setQuestions={setQuestions} /> }
         </div>
     )
 }

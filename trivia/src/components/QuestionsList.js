@@ -5,7 +5,7 @@ import { EndgameCard } from './EndgameCard'
 import { QuestionCounter } from './QuestionCounter'
 
 
-export const QuestionsList = ({ questions }) => {
+export const QuestionsList = ({ questions, setQuestions }) => {
     const [ isCorrect, setIsCorrect ] = useState(false)
     const [ currentIndex, setCurrentIndex ] = useState(0)
     const [ score, setScore ] = useState(0)
@@ -25,7 +25,7 @@ export const QuestionsList = ({ questions }) => {
                     currentIndex={currentIndex}
                     setCurrentIndex={setCurrentIndex}
                 /> :
-                <EndgameCard score={score}/>
+                <EndgameCard score={score} setQuestions={setQuestions}/>
             }
             {questions[currentIndex] !== undefined ? 
                 <QuestionCounter /> :
