@@ -1,5 +1,7 @@
 .gameboard {
-  background-color: rgba(184, 225, 255, 0.6);
+  background-color: #f5f5f5;
+  border: 1em;
+  border-color: #083542;
   margin-top: 10%;
   padding: 2em;
 }
