@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
+import '../styles/question.css'
 
 
-export const Question = ({ question, setIsCorrect, currentIndex, setCurrentIndex }) => {
+export const Question = ({ question, isCorrect, setIsCorrect, currentIndex, setCurrentIndex }) => {
     const [ checkedAnswer, setCheckedAnswer ] = useState('')
 
     useEffect(() => {
@@ -28,7 +29,7 @@ export const Question = ({ question, setIsCorrect, currentIndex, setCurrentIndex
                                     </button>
                                 ))}
                             </div> :
-                            <div className="">
+                            <div className={isCorrect ? 'correct' : 'incorrect'}>
                                 <h3>The correct answer is: </h3>
                                 <p>{question.answer}</p>
                                 <h3>You answered: </h3>

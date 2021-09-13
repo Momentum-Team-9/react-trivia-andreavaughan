@@ -1,9 +1,10 @@
 import React from 'react';
 
-export const EndgameCard = () => {
+export const EndgameCard = ({ score }) => {
+
     return (
         <div>
-            <p>You got __ right!</p>
+            <h3>You got {score} right!</h3>
         </div>
     );
 }

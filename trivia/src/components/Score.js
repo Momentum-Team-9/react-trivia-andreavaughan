@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
-export const Score = ({ isCorrect }) => {
-    const [ score, setScore ] = useState(0)
-
+export const Score = ({ isCorrect, score, setScore }) => {
+    
     useEffect(() => {
         if (isCorrect === true) {
             setScore(score + 1)
@@ -11,8 +10,7 @@ export const Score = ({ isCorrect }) => {
 
     return (
         <div>
-            <p>Score</p>
-            <p>{score}</p>
+            <p>Score: {score}</p>
         </div>
     );
 }
