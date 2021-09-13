@@ -28,7 +28,7 @@ export const QuestionsList = ({ questions, setQuestions }) => {
                 <EndgameCard score={score} setQuestions={setQuestions}/>
             }
             {questions[currentIndex] !== undefined ? 
-                <QuestionCounter /> :
+                <QuestionCounter questions={questions} currentIndex={currentIndex}/> :
                 <div></div> 
             }
             { questions[currentIndex] !== undefined ? 

@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-export const QuestionCounter = () => {
+export const QuestionCounter = ({ questions, currentIndex }) => {
+    const [ currentQuestion, setCurrentQuestion ] = useState(0)
+    const [ totalQuestions ] = useState(questions.length)
+
+    useEffect(() => {
+        setCurrentQuestion(currentQuestion + 1)
+    }, [currentIndex])   
+
     return (
         <div>
-            <p>Question __ of __</p>
+            <p>Question {currentQuestion} of {totalQuestions}</p>
         </div>
     );
 }
