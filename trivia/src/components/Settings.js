@@ -26,8 +26,6 @@ export const Settings = ({ questions, setQuestions }) => {
         }
     }, [selectedCategory])
 
-    console.log(questions)
-
     return (
         <>
             <Categories setSelectedCategory={setSelectedCategory}/>
