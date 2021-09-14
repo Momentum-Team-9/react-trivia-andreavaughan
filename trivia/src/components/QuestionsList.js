@@ -16,7 +16,8 @@ export const QuestionsList = ({ questions, setQuestions }) => {
     }, [currentIndex])
 
     useEffect(() => {
-        if (checkedAnswer === questions[currentIndex].answer) {
+        if ( questions[currentIndex] !== undefined
+            && checkedAnswer === questions[currentIndex].answer) {
             setIsCorrect(true)
         }
     }, [checkedAnswer])
